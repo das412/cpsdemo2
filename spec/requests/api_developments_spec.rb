@@ -39,6 +39,9 @@ RSpec.describe "ApiDevelopments", type: :request do
 
       expect(response).to have_http_status(:ok)
       expect(parsed_body["name"]).to eq("test")
+      expect(parsed_body).to include("created_at")
+      # byebug
+      expect(parsed_body).to include("name"=>object.id.to_s)
     end
   end
 end

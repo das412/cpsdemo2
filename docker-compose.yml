@@ -29,45 +29,44 @@ services:
       - MONGO_HOST=mongo:27017
   #     - GMAPS_GEOCODE_KEY
   #     - GMAPS_JSMAPS_KEY
-  # rake:
-  #   build: .
-  #   command: docker/docker-rake-commands.sh
-  #   volumes:
-  #     - .:/myapp
-  #   depends_on:
-  #     - postgres
-  #     - mongo
-  #     - selenium
-  #   ports:
-  #     - "3010:3010"
-  #   environment:
-  #     - POSTGRES_USER=postgres
-  #     - POSTGRES_HOST=postgres
-  #     - POSTGRES_PASSWORD
-  #     - MONGO_HOST=mongo:27017
+  rake:
+    build: .
+    command: docker/docker-rake-commands.sh
+    volumes:
+      - .:/myapp
+    depends_on:
+      - postgres
+      - mongo
+      # - selenium
+    ports:
+      - "3010:3010"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PASSWORD
+      - MONGO_HOST=mongo:27017
 #       - GMAPS_GEOCODE_KEY
 #       - GMAPS_JSMAPS_KEY
 #       - APP_PORT=3010
 #       - SELENIUM_REMOTE_HOST=selenium
 #       - VNC_PASSWORD=password
-#
-#   test:
-#     build: .
-#     command: docker/docker-test-commands.sh
-#     volumes:
-#       - .:/myapp
-#     depends_on:
-#       - postgres
-#       - mongo
+  test:
+    build: .
+    command: docker/docker-test-commands.sh
+    volumes:
+      - .:/myapp
+    depends_on:
+      - postgres
+      - mongo
 #       - selenium
 #     ports:
 #       - "3010:3010"
 #       - "5900:5900"
-#     environment:
-#       - POSTGRES_USER=postgres
-#       - POSTGRES_HOST=postgres
-#       - POSTGRES_PASSWORD
-#       - MONGO_HOST=mongo:27017
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PASSWORD
+      - MONGO_HOST=mongo:27017
 #       - GMAPS_GEOCODE_KEY
 #       - GMAPS_JSMAPS_KEY
 #       - APP_PORT=3010
