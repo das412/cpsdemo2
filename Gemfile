@@ -15,7 +15,7 @@ group :development, :test do
   # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   gem 'byebug', '~>9.0', '>=9.0.6'
-  gem 'pry-byebug'
+  # gem 'pry-byebug'
   gem 'httparty', '~> 0.14', '>= 0.14.0'
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
 end
@@ -28,3 +28,4 @@ end
 
 gem 'pg', '>= 0.19', '>= 0.19.0'
 gem 'mongoid', '6.0.0' #'~> 5.1', '>= 5.1.5'
+gem 'mongo' #'~> 5.1', '>= 5.1.5'
