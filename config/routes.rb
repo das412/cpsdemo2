@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :foos, except: %i(new edit)
   end
 
+  # FOR EXTERNAL/GULP EXAMPLES
   # get "/client-assets/:name.:format", to: redirect("/client/client-assets/%{name}.%{format}")
 
   get '/ui' => 'ui#index'
